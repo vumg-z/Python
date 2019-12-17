@@ -1,18 +1,19 @@
-# Binary Search
+#Binary search
 
 def binarySearch(arr,number):
-    low = 0;
-    high = len(arr) - 1;
-    steps = 0;
-    while low <= high:
-        mid = (low + high) // 2;
-        guess = arr[mid];
-        if number == guess:
-            return mid;
-        elif number > guess:
-            low = mid + 1;
+    start = 0;
+    end = len(arr) - 1;
+    
+    while start <= end:
+        mid = (start + end) // 2
+        guess = arr[mid]
+        
+        if guess == number:
+            return mid
+        elif guess < number:
+            start = mid + 1
         else:
-            high = mid - 1;
+            end = mid - 1
         
 
 my_list = [1,2,3,4,5,6,7,8,9,10]
