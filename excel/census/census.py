@@ -4,7 +4,7 @@ from openpyxl.utils import get_column_letter, column_index_from_string
 
 print(os.getcwd())
 
-os.chdir(r"C:\Users\Billy\Desktop\B\Python/excel")
+os.chdir(r"C:\Users\Billy\Desktop\B\Python/excel/census")
 
 wb = openpyxl.load_workbook("censuspopdata.xlsx")
 
