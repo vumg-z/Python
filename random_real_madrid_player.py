@@ -1,5 +1,8 @@
 #! /usr/bin/python3
-import http.client, json, random
+import http.client, json, random, time
+
+# init time
+initialTime = time.time()
 
 connection = http.client.HTTPConnection('api.football-data.org')
 headers = { 'X-Auth-Token': 'cf37aebe74444dc2a8c8e463b8ebbff7' }
@@ -13,3 +16,6 @@ for i in response['squad']:
 
 print(names[random.randint(0,len(names))])
 
+finalTime = round(time.time() - initialTime, 2)
+
+print(str(finalTime)+" seconds")
