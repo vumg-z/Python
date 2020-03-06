@@ -8,19 +8,22 @@ URL = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=964"
 
 initialTime = time.time()
 
-r = requests.get(url = URL)
+try:
+    r = requests.get(url = URL)
+    data = r.json()
 
-data = r.json()
+    pokemonArray = []
 
-pokemonArray = []
+    for i in data['results']:
+        pokemonArray.append(i['name'])
 
-for i in data['results']:
-    pokemonArray.append(i['name'])
+    allPokemons = len(pokemonArray)
 
-allPokemons = len(pokemonArray)
+    randomPokemon = pokemonArray[random.randint(0,allPokemons)]
 
-randomPokemon = pokemonArray[random.randint(0,allPokemons)]
+    finalTime = round(time.time() - initialTime, 2)
 
-finalTime = round(time.time() - initialTime, 2)
+    print(randomPokemon, "in "+str(finalTime)+" seconds")
 
-print(randomPokemon, "\nin "+str(finalTime)+" seconds")
+except requests.exceptions.RequestException as e:
+    print("random pokemon not available: request error")
