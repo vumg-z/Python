@@ -18,7 +18,7 @@ try:
         names.append(i['name'])
 
     finalTime = round(time.time() - initialTime, 2)
-    print(Fore.BLUE+names[random.randint(0,len(names))], Fore.GREEN+"(in", str(finalTime), "seconds)")
+    print(Fore.MAGENTA+"Random Real Madrid Player: "+Fore.BLUE+names[random.randint(0,len(names))], Fore.GREEN+"(in", str(finalTime), "seconds)")
 
 except Exception as e:
     print("real madrid player not available:"+Fore.RED+" request error")

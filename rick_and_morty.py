@@ -22,7 +22,7 @@ def getCharacters():
             names.append(i['name'])
         finalTime = str(round(time.time() - initalTime, 2))
 
-        print(Fore.BLUE+names[random.randint(0, len(names))]+Fore.GREEN+" (in "+finalTime+" seconds)")
+        print(Fore.MAGENTA+"Rick and Morty random character: "+Fore.BLUE+names[random.randint(0, len(names))]+Fore.GREEN+" (in "+finalTime+" seconds)")
 
     except requests.exceptions.RequestException as e:
         print(Fore.RED+" Rick and Morty Character not avaliable: request error", e)
