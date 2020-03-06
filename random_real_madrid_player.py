@@ -1,5 +1,8 @@
 #! /usr/bin/python3
 import http.client, json, random, time
+from colorama import Fore, init
+
+init()
 
 try:
     # init time
@@ -15,8 +18,8 @@ try:
         names.append(i['name'])
 
     finalTime = round(time.time() - initialTime, 2)
-    print(names[random.randint(0,len(names))], "in", str(finalTime), "seconds")
+    print(Fore.BLUE+names[random.randint(0,len(names))], Fore.GREEN+"(in", str(finalTime), "seconds)")
 
 except Exception as e:
-    print("real madrid player not available: request error")
+    print("real madrid player not available:"+Fore.RED+" request error")
 

@@ -1,6 +1,9 @@
 #! /usr/bin/python3
 # This script will return a random pokemon
 import requests, random, time
+from colorama import Fore, init
+
+init()
 
 URL = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=964"
 
@@ -23,7 +26,7 @@ try:
 
     finalTime = round(time.time() - initialTime, 2)
 
-    print(randomPokemon, "in "+str(finalTime)+" seconds")
+    print(Fore.BLUE+randomPokemon, Fore.GREEN+"(in "+str(finalTime)+" seconds)")
 
 except requests.exceptions.RequestException as e:
-    print("random pokemon not available: request error")
+    print("random pokemon not available:"+Fore.RED+" request error")
