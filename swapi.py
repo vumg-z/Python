@@ -46,5 +46,5 @@ for f in futures.as_completed(wait_for):
 
 
 finalTime = round(time.time() - initialTime, 2)
-print(Fore.MAGENTA+"Random Star Wars Character: "+Fore.BLUE+characters[random.randint(0,len(characters))],Fore.GREEN+"(in "+str(finalTime)+" seconds)")
+print(Fore.MAGENTA+"Random Star Wars Character: "+Fore.RED+characters[random.randint(0,len(characters))],Fore.GREEN+"(in "+str(finalTime)+" seconds)")
 

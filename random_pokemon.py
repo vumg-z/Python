@@ -26,7 +26,7 @@ try:
 
     finalTime = round(time.time() - initialTime, 2)
 
-    print(Fore.MAGENTA+"Random Pokemon: "+Fore.BLUE+randomPokemon, Fore.GREEN+"(in "+str(finalTime)+" seconds)")
+    print(Fore.MAGENTA+"Random Pokemon: "+Fore.RED+randomPokemon, Fore.GREEN+"(in "+str(finalTime)+" seconds)")
 
 except requests.exceptions.RequestException as e:
     print("random pokemon not available:"+Fore.RED+" request error")
